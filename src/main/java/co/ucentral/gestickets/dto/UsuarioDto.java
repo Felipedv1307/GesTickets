@@ -1,17 +1,16 @@
 package co.ucentral.gestickets.dto;
 
+import co.ucentral.gestickets.persistencia.entidades.Usuario.Rol;
 import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Builder
 public class UsuarioDto {
-    private String nombreCompleto;
-    private String nacionalidad;
     private String username;
     private String password;
+    private String nacionalidad;
+    private Rol rol;
 }
-
-

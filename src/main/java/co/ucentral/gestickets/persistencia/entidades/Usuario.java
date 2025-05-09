@@ -5,26 +5,26 @@ import lombok.*;
 
 @Entity
 @Table(name = "usuarios")
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
 @Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Usuario {
+    @Column(name = "nombre_completo", nullable = false)
+    private String nombreCompleto;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre_completo", nullable = false, length = 100)
-    private String nombreCompleto;
-
-    @Column(nullable = false, length = 50)
-    private String nacionalidad;
-
-    @Column(unique = true, nullable = false, length = 50)
     private String username;
-
-    @Column(nullable = false, length = 100)
     private String password;
+    private String nacionalidad;
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
+
+    public enum Rol {
+        ADMINISTRADOR, GESTOR, USUARIO
+    }
 }
