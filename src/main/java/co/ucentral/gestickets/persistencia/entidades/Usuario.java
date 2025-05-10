@@ -25,6 +25,6 @@ public class Usuario {
     private Rol rol;
 
     public enum Rol {
-        ADMINISTRADOR, GESTOR, USUARIO
+        GESTOR, USUARIO
     }
 }
